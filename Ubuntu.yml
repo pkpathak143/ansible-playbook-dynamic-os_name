@@ -1,0 +1,4 @@
+software_name: apache2
+document_root: /var/www/html/index.html
+
+

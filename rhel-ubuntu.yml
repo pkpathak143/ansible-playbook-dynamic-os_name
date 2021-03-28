@@ -1,0 +1,15 @@
+- hosts: all
+  vars_files:
+    - "{{ ansible_facts['distribution'] }}.yml"
+  tasks:
+    - package:
+        name: "{{ software_name }}"
+
+    - template: 
+        dest: "{{ document_root }}"
+        src: "index.html"
+
+    - service:
+        name: "{{ software_name }}"
+        state: restarted 
+ 
